@@ -1,0 +1,1981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>33c0d7fb-3033-43ed-b61b-9ab6a4eb902a</rd:ReportID>
+  <am:AuthoringMetadata>
+    <am:CreatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1811.11</am:Version>
+    </am:CreatedBy>
+    <am:UpdatedBy>
+      <am:Name>PBIRB</am:Name>
+      <am:Version>15.7.1811.11</am:Version>
+    </am:UpdatedBy>
+    <am:LastModifiedTimestamp>2024-09-20T20:09:29.2206021Z</am:LastModifiedTimestamp>
+  </am:AuthoringMetadata>
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <rd:SecurityType>Integrated</rd:SecurityType>
+      <ConnectionProperties>
+        <DataProvider>ODBC</DataProvider>
+        <ConnectString>Dsn=game_universe</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <rd:DataSourceID>56379947-dfe8-45c9-9c21-64456eb594f8</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+        <CommandText>WITH CharacterInventoryDetails AS (
+    SELECT CI.CharacterID, CI.ItemID, CI.Quantity, Items.ItemName, Items.Description
+    FROM CharacterInventory CI
+    JOIN Items ON CI.ItemID = Items.ItemID
+    WHERE CI.CharacterID = 1
+)
+SELECT *
+FROM CharacterInventoryDetails;</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CharacterID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>CharacterID</DataField>
+        </Field>
+        <Field Name="ItemID">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>ItemID</DataField>
+        </Field>
+        <Field Name="Quantity">
+          <rd:TypeName>System.Int32</rd:TypeName>
+          <DataField>Quantity</DataField>
+        </Field>
+        <Field Name="ItemName">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>ItemName</DataField>
+        </Field>
+        <Field Name="Description">
+          <rd:TypeName>System.String</rd:TypeName>
+          <DataField>Description</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="RectangleMain">
+            <ReportItems>
+              <Rectangle Name="Rectangle1">
+                <KeepTogether>true</KeepTogether>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 1)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle2">
+                <KeepTogether>true</KeepTogether>
+                <Left>2pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 2)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle3">
+                <KeepTogether>true</KeepTogether>
+                <Left>4pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 3)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle4">
+                <KeepTogether>true</KeepTogether>
+                <Left>6pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 4)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle5">
+                <KeepTogether>true</KeepTogether>
+                <Left>8pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 5)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle6">
+                <KeepTogether>true</KeepTogether>
+                <Left>10pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 6)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle7">
+                <KeepTogether>true</KeepTogether>
+                <Left>12pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 7)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle8">
+                <KeepTogether>true</KeepTogether>
+                <Left>14pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 8)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle9">
+                <KeepTogether>true</KeepTogether>
+                <Left>16pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 9)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle10">
+                <KeepTogether>true</KeepTogether>
+                <Left>18pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>9</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 10)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle11">
+                <KeepTogether>true</KeepTogether>
+                <Left>20pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>10</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 11)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle12">
+                <KeepTogether>true</KeepTogether>
+                <Left>22pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>11</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 12)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle13">
+                <KeepTogether>true</KeepTogether>
+                <Left>24pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>12</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 13)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle14">
+                <KeepTogether>true</KeepTogether>
+                <Left>26pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>13</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 14)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle15">
+                <KeepTogether>true</KeepTogether>
+                <Left>28pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>14</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 15)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle16">
+                <KeepTogether>true</KeepTogether>
+                <Left>30pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>15</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 16)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle17">
+                <KeepTogether>true</KeepTogether>
+                <Left>32pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>16</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 17)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle18">
+                <KeepTogether>true</KeepTogether>
+                <Left>34pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>17</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 18)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle19">
+                <KeepTogether>true</KeepTogether>
+                <Left>36pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>18</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 19)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle20">
+                <KeepTogether>true</KeepTogether>
+                <Left>38pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>19</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 20)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle21">
+                <KeepTogether>true</KeepTogether>
+                <Left>40pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>20</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 21)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle22">
+                <KeepTogether>true</KeepTogether>
+                <Left>42pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>21</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 22)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle23">
+                <KeepTogether>true</KeepTogether>
+                <Left>44pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>22</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 23)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle24">
+                <KeepTogether>true</KeepTogether>
+                <Left>46pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>23</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 24)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle25">
+                <KeepTogether>true</KeepTogether>
+                <Left>48pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>24</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 25)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle26">
+                <KeepTogether>true</KeepTogether>
+                <Left>50pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>25</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 26)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle27">
+                <KeepTogether>true</KeepTogether>
+                <Left>52pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>26</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 27)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle28">
+                <KeepTogether>true</KeepTogether>
+                <Left>54pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>27</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 28)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle29">
+                <KeepTogether>true</KeepTogether>
+                <Left>56pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>28</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 29)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle30">
+                <KeepTogether>true</KeepTogether>
+                <Left>58pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>29</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 30)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle31">
+                <KeepTogether>true</KeepTogether>
+                <Left>60pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>30</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 31)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle32">
+                <KeepTogether>true</KeepTogether>
+                <Left>62pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>31</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 32)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle33">
+                <KeepTogether>true</KeepTogether>
+                <Left>64pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>32</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 33)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle34">
+                <KeepTogether>true</KeepTogether>
+                <Left>66pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>33</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 34)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle35">
+                <KeepTogether>true</KeepTogether>
+                <Left>68pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>34</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 35)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle36">
+                <KeepTogether>true</KeepTogether>
+                <Left>70pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>35</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 36)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle37">
+                <KeepTogether>true</KeepTogether>
+                <Left>72pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>36</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 37)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle38">
+                <KeepTogether>true</KeepTogether>
+                <Left>74pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>37</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 38)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle39">
+                <KeepTogether>true</KeepTogether>
+                <Left>76pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>38</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 39)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle40">
+                <KeepTogether>true</KeepTogether>
+                <Left>78pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>39</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 40)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle41">
+                <KeepTogether>true</KeepTogether>
+                <Left>80pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>40</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 41)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle42">
+                <KeepTogether>true</KeepTogether>
+                <Left>82pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>41</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 42)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle43">
+                <KeepTogether>true</KeepTogether>
+                <Left>84pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>42</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 43)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle44">
+                <KeepTogether>true</KeepTogether>
+                <Left>86pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>43</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 44)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle45">
+                <KeepTogether>true</KeepTogether>
+                <Left>88pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>44</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 45)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle46">
+                <KeepTogether>true</KeepTogether>
+                <Left>90pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>45</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 46)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle47">
+                <KeepTogether>true</KeepTogether>
+                <Left>92pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>46</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 47)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle48">
+                <KeepTogether>true</KeepTogether>
+                <Left>94pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>47</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 48)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle49">
+                <KeepTogether>true</KeepTogether>
+                <Left>96pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>48</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 49)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle50">
+                <KeepTogether>true</KeepTogether>
+                <Left>98pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>49</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 50)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle51">
+                <KeepTogether>true</KeepTogether>
+                <Left>100pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>50</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 51)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle52">
+                <KeepTogether>true</KeepTogether>
+                <Left>102pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>51</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 52)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle53">
+                <KeepTogether>true</KeepTogether>
+                <Left>104pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>52</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 53)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle54">
+                <KeepTogether>true</KeepTogether>
+                <Left>106pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>53</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 54)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle55">
+                <KeepTogether>true</KeepTogether>
+                <Left>108pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>54</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 55)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle56">
+                <KeepTogether>true</KeepTogether>
+                <Left>110pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>55</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 56)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle57">
+                <KeepTogether>true</KeepTogether>
+                <Left>112pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>56</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 57)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle58">
+                <KeepTogether>true</KeepTogether>
+                <Left>114pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>57</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 58)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle59">
+                <KeepTogether>true</KeepTogether>
+                <Left>116pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>58</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 59)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle60">
+                <KeepTogether>true</KeepTogether>
+                <Left>118pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>59</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 60)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle61">
+                <KeepTogether>true</KeepTogether>
+                <Left>120pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>60</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 61)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle62">
+                <KeepTogether>true</KeepTogether>
+                <Left>122pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>61</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 62)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle63">
+                <KeepTogether>true</KeepTogether>
+                <Left>124pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>62</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 63)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle64">
+                <KeepTogether>true</KeepTogether>
+                <Left>126pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>63</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 64)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle65">
+                <KeepTogether>true</KeepTogether>
+                <Left>128pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>64</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 65)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle66">
+                <KeepTogether>true</KeepTogether>
+                <Left>130pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>65</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 66)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle67">
+                <KeepTogether>true</KeepTogether>
+                <Left>132pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>66</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 67)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle68">
+                <KeepTogether>true</KeepTogether>
+                <Left>134pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>67</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 68)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle69">
+                <KeepTogether>true</KeepTogether>
+                <Left>136pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>68</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 69)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle70">
+                <KeepTogether>true</KeepTogether>
+                <Left>138pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>69</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 70)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle71">
+                <KeepTogether>true</KeepTogether>
+                <Left>140pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>70</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 71)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle72">
+                <KeepTogether>true</KeepTogether>
+                <Left>142pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>71</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 72)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle73">
+                <KeepTogether>true</KeepTogether>
+                <Left>144pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>72</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 73)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle74">
+                <KeepTogether>true</KeepTogether>
+                <Left>146pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>73</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 74)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle75">
+                <KeepTogether>true</KeepTogether>
+                <Left>148pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>74</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 75)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle76">
+                <KeepTogether>true</KeepTogether>
+                <Left>150pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>75</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 76)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle77">
+                <KeepTogether>true</KeepTogether>
+                <Left>152pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>76</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 77)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle78">
+                <KeepTogether>true</KeepTogether>
+                <Left>154pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>77</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 78)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle79">
+                <KeepTogether>true</KeepTogether>
+                <Left>156pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>78</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 79)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle80">
+                <KeepTogether>true</KeepTogether>
+                <Left>158pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>79</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 80)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle81">
+                <KeepTogether>true</KeepTogether>
+                <Left>160pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>80</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 81)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle82">
+                <KeepTogether>true</KeepTogether>
+                <Left>162pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>81</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 82)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle83">
+                <KeepTogether>true</KeepTogether>
+                <Left>164pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>82</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 83)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle84">
+                <KeepTogether>true</KeepTogether>
+                <Left>166pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>83</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 84)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle85">
+                <KeepTogether>true</KeepTogether>
+                <Left>168pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>84</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 85)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle86">
+                <KeepTogether>true</KeepTogether>
+                <Left>170pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>85</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 86)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle87">
+                <KeepTogether>true</KeepTogether>
+                <Left>172pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>86</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 87)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle88">
+                <KeepTogether>true</KeepTogether>
+                <Left>174pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>87</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 88)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle89">
+                <KeepTogether>true</KeepTogether>
+                <Left>176pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>88</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 89)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle90">
+                <KeepTogether>true</KeepTogether>
+                <Left>178pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>89</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 90)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle91">
+                <KeepTogether>true</KeepTogether>
+                <Left>180pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>90</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 91)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle92">
+                <KeepTogether>true</KeepTogether>
+                <Left>182pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>91</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 92)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle93">
+                <KeepTogether>true</KeepTogether>
+                <Left>184pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>92</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 93)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle94">
+                <KeepTogether>true</KeepTogether>
+                <Left>186pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>93</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 94)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle95">
+                <KeepTogether>true</KeepTogether>
+                <Left>188pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>94</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 95)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle96">
+                <KeepTogether>true</KeepTogether>
+                <Left>190pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>95</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 96)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle97">
+                <KeepTogether>true</KeepTogether>
+                <Left>192pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>96</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 97)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle98">
+                <KeepTogether>true</KeepTogether>
+                <Left>194pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>97</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 98)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle99">
+                <KeepTogether>true</KeepTogether>
+                <Left>196pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>98</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 99)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle100">
+                <KeepTogether>true</KeepTogether>
+                <Left>198pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>99</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 100)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle101">
+                <KeepTogether>true</KeepTogether>
+                <Left>200pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>100</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 101)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle102">
+                <KeepTogether>true</KeepTogether>
+                <Left>202pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>101</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 102)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle103">
+                <KeepTogether>true</KeepTogether>
+                <Left>204pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>102</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 103)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle104">
+                <KeepTogether>true</KeepTogether>
+                <Left>206pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>103</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 104)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle105">
+                <KeepTogether>true</KeepTogether>
+                <Left>208pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>104</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 105)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle106">
+                <KeepTogether>true</KeepTogether>
+                <Left>210pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>105</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 106)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle107">
+                <KeepTogether>true</KeepTogether>
+                <Left>212pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>106</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 107)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle108">
+                <KeepTogether>true</KeepTogether>
+                <Left>214pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>107</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 108)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle109">
+                <KeepTogether>true</KeepTogether>
+                <Left>216pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>108</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 109)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle110">
+                <KeepTogether>true</KeepTogether>
+                <Left>218pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>109</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 110)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle111">
+                <KeepTogether>true</KeepTogether>
+                <Left>220pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>110</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 111)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle112">
+                <KeepTogether>true</KeepTogether>
+                <Left>222pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>111</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 112)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle113">
+                <KeepTogether>true</KeepTogether>
+                <Left>224pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>112</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 113)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle114">
+                <KeepTogether>true</KeepTogether>
+                <Left>226pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>113</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 114)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle115">
+                <KeepTogether>true</KeepTogether>
+                <Left>228pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>114</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 115)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle116">
+                <KeepTogether>true</KeepTogether>
+                <Left>230pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>115</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 116)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle117">
+                <KeepTogether>true</KeepTogether>
+                <Left>232pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>116</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 117)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle118">
+                <KeepTogether>true</KeepTogether>
+                <Left>234pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>117</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 118)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle119">
+                <KeepTogether>true</KeepTogether>
+                <Left>236pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>118</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 119)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle120">
+                <KeepTogether>true</KeepTogether>
+                <Left>238pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>119</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 120)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle121">
+                <KeepTogether>true</KeepTogether>
+                <Left>240pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>120</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 121)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle122">
+                <KeepTogether>true</KeepTogether>
+                <Left>242pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>121</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 122)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle123">
+                <KeepTogether>true</KeepTogether>
+                <Left>244pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>122</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 123)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle124">
+                <KeepTogether>true</KeepTogether>
+                <Left>246pt</Left>
+                <Height>40pt</Height>
+                <Width>2pt</Width>
+                <ZIndex>123</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>=Code.GetBarcodeColor(Parameters!Valuetorepresent.Value.ToString(), 124)</BackgroundColor>
+                </Style>
+              </Rectangle>
+              <Textbox Name="Textbox3">
+                <rd:DefaultName>Textbox3</rd:DefaultName>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Parameters!Valuetorepresent.Value</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.79007cm</Top>
+                <Left>3.03389cm</Left>
+                <Height>0.6cm</Height>
+                <Width>2.5cm</Width>
+                <ZIndex>124</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>0.27213cm</Top>
+            <Left>3.135cm</Left>
+            <Height>2.42562cm</Height>
+            <Width>8.88977cm</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox2">
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Who it works:</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Code.GetDebugInfo(Parameters!Valuetorepresent.Value.ToString())</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.87414cm</Top>
+            <Left>0.90113cm</Left>
+            <Height>5.56535cm</Height>
+            <Width>13.63896cm</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>85.80598mm</Height>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Body>
+      <Width>152.4mm</Width>
+      <Page>
+        <PageHeader>
+          <Height>12.23731mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Code39 Barcodes with native VBnet implementation</Value>
+                      <Style>
+                        <FontStyle>Italic</FontStyle>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>by Germán Neironi</Value>
+                      <Style>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Height>10.47342mm</Height>
+              <Width>152.4mm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>11.43mm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ExecutionTime">
+              <rd:DefaultName>ExecutionTime</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals!ExecutionTime</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>5.08mm</Top>
+              <Left>101.6mm</Left>
+              <Height>6.35mm</Height>
+              <Width>50.8mm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
+        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Valuetorepresent">
+      <DataType>String</DataType>
+      <Prompt>Valuetorepresent</Prompt>
+      <cl:ComponentMetadata>
+        <cl:HideUpdateNotifications>true</cl:HideUpdateNotifications>
+      </cl:ComponentMetadata>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>Valuetorepresent</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Code>Function ProcessInput(ByVal data As String) As String
+    data = Trim(data)
+    data = System.Text.RegularExpressions.Regex.Replace(data, "[^\d]", "")
+    If Len(data) &gt; 6 Then
+        data = Right(data, 6)  ' Tomamos los últimos 6 dígitos
+    End If
+    ' No rellenamos con ceros a la izquierda
+    Return data
+End Function
+
+Function Code39(ByVal data As String) As String
+    Dim patterns As New System.Collections.Generic.Dictionary(Of Char, String)()
+    patterns.Add("0"c, "101001101101")
+    patterns.Add("1"c, "110100101011")
+    patterns.Add("2"c, "101100101011")
+    patterns.Add("3"c, "110110010101")
+    patterns.Add("4"c, "101001101011")
+    patterns.Add("5"c, "110100110101")
+    patterns.Add("6"c, "101100110101")
+    patterns.Add("7"c, "101001011011")
+    patterns.Add("8"c, "110100101101")
+    patterns.Add("9"c, "101100101101")
+    patterns.Add("*"c, "100101101101")
+
+    Dim result As String = patterns("*"c)
+    For Each c As Char In data
+        If patterns.ContainsKey(c) Then
+            result &amp;= "0" &amp; patterns(c) ' Añadimos un espacio entre caracteres
+        End If
+    Next
+    result &amp;= patterns("*"c)
+    Return result
+End Function
+
+Function GenerateBarcode(ByVal data As String) As String
+    data = ProcessInput(data)
+    Dim barcode As String = Code39(data)
+    Dim result As String = New String("W"c, 10) ' Zona silenciosa inicial
+    For i As Integer = 1 To Len(barcode)
+        result &amp;= IIf(Mid(barcode, i, 1) = "1", "B", "W")
+    Next
+    result &amp;= New String("W"c, 10) ' Zona silenciosa final
+    Return result
+End Function
+
+Function GetBarcodeColor(ByVal data As String, ByVal index As Integer) As String
+    Dim barcode As String = GenerateBarcode(data)
+    If index &gt;= 1 AndAlso index &lt;= Len(barcode) Then
+        Return IIf(Mid(barcode, index, 1) = "B", "Black", "White")
+    Else
+        Return "White"
+    End If
+End Function
+Function GetDebugInfo(ByVal data As String) As String
+    Dim processedData = ProcessInput(data)
+    Dim code39Pattern = Code39(processedData)
+    Dim barcodePattern = GenerateBarcode(processedData)
+    Dim debugInfo As String = ""
+    debugInfo &amp;= "Raw Input: " &amp; data &amp; vbNewLine
+    debugInfo &amp;= "Processed Input: " &amp; processedData &amp; vbNewLine
+    debugInfo &amp;= "Code 39 Pattern: " &amp; code39Pattern &amp; vbNewLine
+    debugInfo &amp;= "Code 39 Pattern Length: " &amp; Len(code39Pattern).ToString() &amp; vbNewLine
+    debugInfo &amp;= "Final Barcode Pattern: " &amp; barcodePattern &amp; vbNewLine
+    debugInfo &amp;= "Final Pattern Length: " &amp; Len(barcodePattern).ToString() &amp; vbNewLine
+    debugInfo &amp;= "Character Breakdown:" &amp; vbNewLine
+    For i As Integer = 1 To Len(processedData)
+        Dim charPattern = Mid(code39Pattern, (i-1)*13 + 13, 13)
+        debugInfo &amp;= "  " &amp; Mid(processedData, i, 1) &amp; ": " &amp; charPattern &amp; vbNewLine
+    Next
+    Return debugInfo
+End Function</Code>
+</Report>
